@@ -22,8 +22,8 @@ module.exports = async function checkoutController(req, res, next) {
 
   const userCart = req.user
     ? await CartModel.findOne({
-        user: req.user.username,
-      })
+      user: req.user.username,
+    })
     : null
 
   order.cart = req.user ? userCart : order.cart
@@ -111,6 +111,7 @@ module.exports = async function checkoutController(req, res, next) {
     products: orderProducts,
     name: order.name,
     address: order.address,
+    wallet: order.wallet,
     phone_number: order.phone_number,
     user: req.user ? req.user.username : "GUEST",
     order_id: orderId,

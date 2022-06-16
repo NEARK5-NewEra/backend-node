@@ -36,6 +36,10 @@ const OrderSchema = new Schema({
     type: String,
     required: true,
   },
+  wallet: {
+    type: String,
+    required: true,
+  },
   user: {
     type: String,
   },
